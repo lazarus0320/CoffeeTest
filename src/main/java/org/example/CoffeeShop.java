@@ -1,15 +1,18 @@
 package org.example;
 
-import org.example.coffeeShop.brew.entity.Barista;
-import org.example.coffeeShop.customer.entity.Customer;
-import org.example.coffeeShop.order.entity.Cashier;
+import org.example.barista.Barista;
+import org.example.barista.BaristaImpl;
+import org.example.cashier.Cashier;
+import org.example.cashier.CashierImpl;
+import org.example.customer.Customer;
+import org.example.customer.CustomerImpl;
 
 public class CoffeeShop {
     public static void main(String[] args) {
-        Barista barista = new Barista("바리스타");
-        Cashier cashier = new Cashier("캐셔", barista);
-        Customer customer = new Customer("손님");
+        Barista barista = new BaristaImpl();
+        Cashier cashier = new CashierImpl();
+        Customer customer = new CustomerImpl();
 
-        customer.orderCoffee(cashier);
+        customer.order(cashier);
     }
 }
